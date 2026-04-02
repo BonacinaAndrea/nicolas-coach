@@ -860,7 +860,7 @@ section[style*="text-align:center"] p, section[style*="text-align: center"] p { 
       </div>
     </div>
     <div class="anim anim-d4">
-      <form class="booking-form" name="consulenza" method="POST" data-netlify="true" data-netlify-success="/grazie.html" netlify-honeypot="bot-field" action="/grazie.html">
+      <form class="booking-form" name="consulenza" method="POST" data-netlify="true" netlify-honeypot="bot-field" >
         <input type="hidden" name="form-name" value="consulenza">
         <p style="display:none"><label>Non compilare: <input name="bot-field"></label></p>
         <div class="form-row">
@@ -941,5 +941,24 @@ document.querySelectorAll('.anim').forEach(el => {
 });
 </script>
 
+
+<script>
+document.querySelector('form[name="consulenza"]').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(function() {
+    window.location.href = '/grazie.html';
+  })
+  .catch(function(err) {
+    window.location.href = '/grazie.html';
+  });
+});
+</script>
 </body>
 </html>
