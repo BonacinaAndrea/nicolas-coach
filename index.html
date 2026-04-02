@@ -866,6 +866,7 @@ section[style*="text-align: center"] p { font-size: 1.15rem !important; color: v
 }
 
 </style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 <nav class="nav" role="navigation" aria-label="Menu principale">
@@ -1137,5 +1138,18 @@ document.querySelectorAll('.anim').forEach(el => {
   resetAuto();
 })();
 </script>
+  <script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+</script>
+</body>
+</html>
 </body>
 </html>
