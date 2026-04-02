@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Teko:wght@500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programmi allenamento calcio personalizzati — Coaching online e in presenza | NP Performance Coach</title>
+<meta name="description" content="Schede allenamento calcio personalizzate da €39,99. Coaching calcio online e in presenza in Lombardia. Preparazione atletica per calciatori dilettanti e agonisti.">
+<meta name="keywords" content="preparatore atletico calcio, allenamento calcio personalizzato, personal trainer calcio, coaching calcio online, preparazione atletica calciatori, schede allenamento calcio, performance coach calcio Serie C, allenamento per calciatori, programmi allenamento calcio">
+<meta name="author" content="Nicolas Previtali — NP Performance Coach">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Programmi allenamento calcio personalizzati — Coaching online e in presenza | NP Performance Coach">
+<meta property="og:description" content="Schede allenamento calcio personalizzate da €39,99. Coaching calcio online e in presenza in Lombardia. Preparazione atletica per calciatori dilettanti e agonisti.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<link rel="canonical" href="https://npperformancecoach.it/servizi">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&family=Teko:wght@500;600&display=swap');
+
+:root {
+  --black: #080808;
+  --black-soft: #0f0f0f;
+  --black-mid: #161616;
+  --black-card: #121212;
+  --border: #222222;
+  --border-light: #2a2a2a;
+  --muted: #888888;
+  --muted-light: #aaaaaa;
+  --white: #f2f0eb;
+  --white-dim: #cccccc;
+  --accent: #F5C400;
+  --accent-dim: #d4a900;
+  --font-title: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-accent: 'Teko', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { background: var(--black); color: var(--white); font-family: var(--font-body); font-weight: 300; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 72px; background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+.nav-logo img { height: 40px; width: auto; }
+.nav-logo-text { font-family: var(--font-title); font-weight: 900; font-size: 1.3rem; letter-spacing: 0.06em; color: var(--white); }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-light); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-cta { background: var(--accent) !important; color: var(--black) !important; padding: 0.55rem 1.4rem !important; font-weight: 500 !important; }
+.nav-cta:hover { background: var(--accent-dim) !important; color: var(--black) !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.25s; }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 55% 45%; padding-top: 72px; overflow: hidden; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 3rem; position: relative; z-index: 2; }
+.hero-eyebrow { font-family: var(--font-accent); font-size: 1rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.hero-eyebrow::before { content: ''; width: 36px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
+.hero-headline { font-family: var(--font-title); font-weight: 900; font-size: clamp(4.5rem, 7.5vw, 7.5rem); line-height: 0.88; letter-spacing: 0.01em; text-transform: uppercase; color: var(--white); margin-bottom: 2.5rem; }
+.hero-headline .line-accent { color: var(--accent); }
+.hero-sub { font-size: 1.05rem; font-weight: 300; color: var(--white-dim); max-width: 400px; line-height: 1.75; margin-bottom: 3rem; }
+.hero-actions { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.btn-primary { display: inline-block; background: var(--accent); color: var(--black); font-family: var(--font-body); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 1rem 2.5rem; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--accent-dim); transform: translateY(-2px); }
+.btn-ghost { font-size: 0.88rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); border-bottom: 1px solid var(--border-light); padding-bottom: 3px; transition: color 0.2s, border-color 0.2s; }
+.btn-ghost:hover { color: var(--white); border-color: var(--muted); }
+.hero-stats { display: flex; gap: 3rem; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border); }
+.stat-num { font-family: var(--font-title); font-weight: 900; font-size: 2.2rem; color: var(--accent); line-height: 1; display: block; }
+.stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-light); margin-top: 0.3rem; display: block; }
+.hero-right { position: relative; overflow: hidden; }
+.hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+/* SECTIONS */
+.section { padding: 7rem 3rem; }
+.section-alt { background: var(--black-soft); }
+.section-tag { font-family: var(--font-accent); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+.section-tag::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+.section-title { font-family: var(--font-title); font-weight: 900; font-size: clamp(3rem, 5vw, 5rem); line-height: 0.9; text-transform: uppercase; letter-spacing: 0.01em; color: var(--white); margin-bottom: 4rem; }
+.section-title .accent { color: var(--accent); }
+
+/* CHI E */
+.chie-grid { display: grid; grid-template-columns: 420px 1fr; gap: 5rem; align-items: start; }
+.chie-photo-wrap { position: relative; }
+.chie-photo-box { width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+.chie-photo-box img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.chie-badge { position: absolute; bottom: -1rem; right: -1rem; background: var(--accent); padding: 1.2rem 1.4rem; text-align: center; }
+.chie-badge-main { font-family: var(--font-title); font-weight: 900; font-size: 1.1rem; color: var(--black); line-height: 1.2; letter-spacing: 0.04em; }
+.chie-badge-sub { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); margin-top: 0.2rem; }
+.chie-content { padding-top: 1rem; }
+.chie-quote { font-size: 1.15rem; font-weight: 300; font-style: italic; line-height: 1.65; color: var(--white); border-left: 3px solid var(--accent); padding-left: 1.5rem; margin-bottom: 2rem; }
+.chie-body { font-size: 0.95rem; color: var(--muted-light); line-height: 1.85; margin-bottom: 1.25rem; }
+.credentials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 3rem; }
+.cred-item { background: var(--black); padding: 1.25rem 1.5rem; }
+.cred-label { font-family: var(--font-accent); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+.cred-val { font-size: 0.9rem; font-weight: 400; color: var(--white); }
+
+/* ACTION GALLERY */
+.action-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 1.5rem; }
+.action-gallery img { width: 100%; aspect-ratio: 16/10; object-fit: cover; filter: grayscale(20%); transition: filter 0.3s; }
+.action-gallery img:hover { filter: grayscale(0%); }
+
+/* SERVICES */
+.services-intro { max-width: 560px; font-size: 1rem; color: var(--muted-light); line-height: 1.8; margin-bottom: 4rem; margin-top: -2rem; }
+.services-categories { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+.service-category { background: var(--black-card); }
+.service-category-header { display: flex; align-items: center; justify-content: space-between; padding: 2rem 2.5rem; cursor: pointer; transition: background 0.2s; }
+.service-category-header:hover { background: var(--black-mid); }
+.service-cat-title { font-family: var(--font-title); font-weight: 800; font-size: 1.6rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); }
+.service-cat-icon { font-family: var(--font-accent); font-size: 1.6rem; color: var(--accent); transition: transform 0.25s; line-height: 1; }
+.service-category.open .service-cat-icon { transform: rotate(45deg); }
+.service-cards { display: none; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
+.service-category.open .service-cards { display: grid; }
+.service-card { background: var(--black); padding: 2rem 2rem 2.5rem; position: relative; transition: background 0.2s; }
+.service-card:hover { background: #0d0d0d; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.service-card:hover::before { transform: scaleX(1); }
+.service-price { font-family: var(--font-title); font-weight: 900; font-size: 2.4rem; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+.service-price-note { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+.service-name { font-family: var(--font-title); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); margin-bottom: 0.75rem; line-height: 1.2; }
+.service-desc { font-size: 0.85rem; color: var(--muted-light); line-height: 1.7; margin-bottom: 1.5rem; }
+.service-includes { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.service-includes li { font-size: 0.8rem; color: var(--muted-light); display: flex; align-items: center; gap: 0.75rem; }
+.service-includes li::before { content: ''; width: 14px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
+.service-cta-link { display: inline-block; margin-top: 2rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid rgba(245,196,0,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
+.service-cta-link:hover { border-color: var(--accent); }
+
+/* SESSIONI AGGIUNTIVE - premium block */
+.service-premium { background: var(--black-card); border: 1px solid var(--border-light); padding: 3.5rem 3rem; margin-top: 3rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+.service-premium-label { font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+.service-premium-title { font-family: var(--font-title); font-weight: 900; font-size: 2rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.75rem; line-height: 1; }
+.service-premium-desc { font-size: 0.9rem; color: var(--muted-light); line-height: 1.75; max-width: 500px; }
+
+/* TESTIMONIAL CAROUSEL */
+.testimonials-section { padding: 7rem 3rem; background: var(--black-soft); overflow: hidden; }
+.testimonials-track-wrap { position: relative; }
+.testimonials-track { display: flex; gap: 0; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.testimonial-slide { min-width: 100%; display: grid; grid-template-columns: 380px 1fr; gap: 0; background: var(--black-card); border: 1px solid var(--border); }
+.testimonial-photo { aspect-ratio: 3/4; overflow: hidden; }
+.testimonial-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(30%); }
+.testimonial-content { padding: 4rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+.testimonial-sport { font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+.testimonial-quote { font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.7; margin-bottom: 2.5rem; border-left: 3px solid var(--accent); padding-left: 1.5rem; }
+.testimonial-name { font-family: var(--font-title); font-weight: 800; font-size: 1.4rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white); }
+.testimonial-detail { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.25rem; }
+.testimonial-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 3rem; }
+.t-metric { background: var(--black); padding: 1rem 1.25rem; }
+.t-metric-val { font-family: var(--font-title); font-weight: 900; font-size: 1.8rem; color: var(--accent); line-height: 1; display: block; }
+.t-metric-lbl { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; display: block; }
+.testimonial-nav { display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; }
+.t-nav-btn { width: 48px; height: 48px; border: 1px solid var(--border-light); background: transparent; color: var(--white); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.t-nav-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--black); }
+.t-nav-dots { display: flex; gap: 0.5rem; }
+.t-dot { width: 6px; height: 6px; background: var(--border-light); transition: background 0.2s, width 0.2s; cursor: pointer; }
+.t-dot.active { background: var(--accent); width: 20px; }
+
+/* PRENOTA */
+.booking-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: start; }
+.booking-intro { font-size: 1rem; color: var(--muted-light); line-height: 1.8; margin-bottom: 3rem; }
+.booking-steps { display: flex; flex-direction: column; gap: 2.5rem; }
+.booking-step { display: flex; gap: 1.5rem; align-items: flex-start; }
+.step-num { font-family: var(--font-accent); font-weight: 600; font-size: 1.3rem; color: var(--accent); min-width: 36px; line-height: 1.2; }
+.step-title { font-family: var(--font-title); font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white); margin-bottom: 0.35rem; }
+.step-desc { font-size: 0.85rem; color: var(--muted-light); line-height: 1.7; }
+
+/* FORM */
+.booking-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-light); }
+.form-group input, .form-group select, .form-group textarea { background: var(--black-card); border: 1px solid var(--border-light); color: var(--white); padding: 0.9rem 1rem; font-family: var(--font-body); font-size: 0.9rem; font-weight: 300; outline: none; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; width: 100%; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { resize: none; height: 130px; }
+.form-group select option { background: var(--black-mid); }
+.form-submit { background: var(--accent); color: var(--black); border: none; padding: 1.1rem 2.5rem; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; width: 100%; margin-top: 0.5rem; transition: background 0.2s, transform 0.15s; }
+.form-submit:hover { background: var(--accent-dim); transform: translateY(-2px); }
+.form-note { font-size: 0.75rem; color: var(--muted); text-align: center; line-height: 1.6; }
+
+/* FOOTER */
+.footer { padding: 3rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-logo { display: flex; align-items: center; gap: 0.6rem; }
+.footer-logo img { height: 32px; width: auto; }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-social { display: flex; align-items: center; gap: 0.75rem; }
+.social-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border); color: var(--muted); transition: color 0.2s, border-color 0.2s; }
+.social-icon:hover { color: var(--accent); border-color: var(--accent); }
+.footer-copy { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.anim { opacity: 0; }
+.anim.visible { animation: fadeUp 0.6s ease forwards; }
+.anim-d1 { animation-delay: 0.1s; } .anim-d2 { animation-delay: 0.22s; } .anim-d3 { animation-delay: 0.36s; } .anim-d4 { animation-delay: 0.5s; }
+
+/* AUTOPLAY pause on hover */
+.testimonials-track-wrap:hover .testimonials-track { animation-play-state: paused; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: rgba(8,8,8,0.98); padding: 2rem 1.5rem; border-bottom: 1px solid var(--border); gap: 1.5rem; }
+  .nav-hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 50vw; }
+  .hero-left { padding: 4rem 1.5rem; }
+  .hero-stats { gap: 2rem; }
+  .section { padding: 5rem 1.5rem; }
+  .chie-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .chie-photo-wrap { max-width: 340px; }
+  .credentials-grid { grid-template-columns: 1fr 1fr; }
+  .testimonial-slide { grid-template-columns: 1fr; }
+  .testimonial-photo { aspect-ratio: 16/9; }
+  .booking-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .service-premium { grid-template-columns: 1fr; }
+  .action-gallery { grid-template-columns: 1fr 1fr; }
+}
+
+/* FIX: service cards always fill row — no grey orphan space */
+.service-cards {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+}
+/* when only 2 cards, make them each 50% */
+.service-cards:has(> :nth-child(2):last-child) {
+  grid-template-columns: 1fr 1fr !important;
+}
+
+/* FIX: gallery — correct crop for each photo */
+.action-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 1.5rem; }
+.action-gallery img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.action-gallery .portrait { aspect-ratio: 3/4; }
+
+/* TESTIMONIAL CAROUSEL — horizontal scroll home */
+.home-testimonials { padding: 6rem 0; overflow: hidden; background: var(--black-soft); }
+.home-testimonials-header { padding: 0 3rem 3rem; }
+.ht-track-outer { overflow: hidden; }
+.ht-track { display: flex; gap: 24px; padding: 0 3rem; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); cursor: grab; }
+.ht-track:active { cursor: grabbing; }
+.ht-card { min-width: 340px; background: var(--black-card); border: 1px solid var(--border); padding: 2.5rem; flex-shrink: 0; }
+.ht-card-sport { font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+.ht-card-quote { font-style: italic; font-size: 0.95rem; color: var(--white-dim); line-height: 1.7; margin-bottom: 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem; }
+.ht-card-name { font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); }
+.ht-card-detail { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+.ht-card-metrics { display: flex; gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.ht-metric-val { font-family: var(--font-title); font-weight: 900; font-size: 1.6rem; color: var(--accent); line-height: 1; display: block; }
+.ht-metric-lbl { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; display: block; }
+.ht-nav { display: flex; gap: 0.75rem; padding: 2rem 3rem 0; }
+.ht-nav-btn { width: 44px; height: 44px; border: 1px solid var(--border-light); background: transparent; color: var(--white); font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.ht-nav-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--black); }
+
+/* FULL TESTIMONIALS page — accordion list */
+.testi-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+.testi-row { background: var(--black-card); }
+.testi-row-header { display: grid; grid-template-columns: 60px 1fr auto 80px; align-items: center; gap: 2rem; padding: 2rem 2.5rem; cursor: pointer; transition: background 0.2s; }
+.testi-row-header:hover { background: var(--black-mid); }
+.testi-row-num { font-family: var(--font-accent); font-size: 1rem; letter-spacing: 0.15em; color: var(--muted); }
+.testi-row-name { font-family: var(--font-title); font-weight: 800; font-size: 1.5rem; letter-spacing: 0.03em; text-transform: uppercase; display: block; }
+.testi-row-sport { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; display: block; }
+.testi-row-result-num { font-family: var(--font-title); font-weight: 900; font-size: 1.8rem; color: var(--accent); line-height: 1; display: block; text-align: right; }
+.testi-row-result-lbl { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; display: block; text-align: right; }
+.testi-row-toggle { font-family: var(--font-accent); font-size: 1.5rem; color: var(--accent); text-align: right; transition: transform 0.25s; }
+.testi-row.open .testi-row-toggle { transform: rotate(45deg); }
+.testi-detail { display: none; padding: 2.5rem; border-top: 1px solid var(--border); }
+.testi-row.open .testi-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.testi-detail-body { font-size: 0.9rem; color: var(--muted-light); line-height: 1.85; }
+.testi-detail-quote { font-style: italic; font-size: 1rem; color: var(--white-dim); border-left: 3px solid var(--accent); padding-left: 1.5rem; margin-top: 1.25rem; line-height: 1.7; }
+.testi-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); align-content: start; }
+.testi-metric { background: var(--black); padding: 1.25rem 1.5rem; }
+.testi-metric-val { font-family: var(--font-title); font-weight: 900; font-size: 2rem; color: var(--accent); line-height: 1; display: block; }
+.testi-metric-lbl { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; display: block; }
+
+@media (max-width: 960px) {
+  .testi-row-header { grid-template-columns: 1fr auto; gap: 1rem; }
+  .testi-row-num { display: none; }
+  .testi-row.open .testi-detail { grid-template-columns: 1fr; }
+}
+
+
+/* ── SEO BLOCK ── */
+.seo-block { padding: 6rem 3rem; background: var(--black-soft); }
+.seo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 3rem; }
+.seo-card { background: var(--black-card); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background 0.25s; }
+.seo-card:hover { background: #111; }
+.seo-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.seo-card:hover::before { transform: scaleX(1); }
+.seo-card-icon { font-family: var(--font-accent); font-size: 3rem; color: rgba(245,196,0,0.1); font-weight: 600; line-height: 1; margin-bottom: 1rem; }
+.seo-card-title { font-family: var(--font-title); font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.75rem; }
+.seo-card-body { font-size: 0.88rem; color: var(--muted-light); line-height: 1.75; }
+.seo-text-block { max-width: 760px; margin: 3rem auto 0; text-align: center; }
+.seo-text-block p { font-size: 0.9rem; color: var(--muted); line-height: 1.85; }
+
+/* ── REVIEWS ── */
+.reviews-section { padding: 6rem 3rem; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 3rem; }
+.review-card { background: var(--black-card); padding: 2rem; transition: background 0.2s; }
+.review-card:hover { background: #111; }
+.review-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.review-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-weight: 900; font-size: 1.1rem; color: var(--black); flex-shrink: 0; }
+.review-author-name { font-family: var(--font-title); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); display: block; }
+.review-author-detail { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 0.15rem; }
+.review-verified { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.25rem; }
+.review-text { font-size: 0.9rem; color: var(--white-dim); line-height: 1.75; font-style: italic; border-left: 2px solid var(--accent); padding-left: 1rem; }
+.review-date { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 1rem; display: block; }
+
+/* ── SECTION HEADER ROW ── */
+.section-header-row { display: flex; align-items: flex-end; gap: 3rem; margin-bottom: 4rem; }
+.section-header-text { font-size: 0.88rem; color: var(--muted-light); line-height: 1.75; max-width: 480px; padding-bottom: 0.5rem; }
+
+/* ── HOME TESTIMONIALS WITH PHOTO BG ── */
+.home-testimonials { padding: 6rem 0; overflow: hidden; background: var(--black-soft); }
+.home-testimonials-header { padding: 0 3rem 3rem; display: flex; align-items: flex-end; gap: 3rem; }
+.home-testimonials-header-text { font-size: 0.88rem; color: var(--muted-light); line-height: 1.75; max-width: 380px; padding-bottom: 0.5rem; }
+.ht-track-outer { overflow: hidden; }
+.ht-track { display: flex; gap: 24px; padding: 0 3rem; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); cursor: grab; user-select: none; }
+.ht-track:active { cursor: grabbing; }
+.ht-card { min-width: 360px; height: 480px; border: 1px solid var(--border); flex-shrink: 0; position: relative; overflow: hidden; }
+.ht-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center top; opacity: 0.15; transition: opacity 0.4s ease, filter 0.4s ease; filter: grayscale(40%); }
+.ht-card:hover .ht-card-bg { opacity: 0.7; filter: grayscale(0%); }
+.ht-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.7) 50%, rgba(8,8,8,0.2) 100%); transition: opacity 0.4s ease; }
+.ht-card:hover .ht-card-overlay { background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.3) 60%, rgba(8,8,8,0.05) 100%); }
+.ht-card-content { position: relative; z-index: 2; padding: 2rem; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; transition: transform 0.4s ease; }
+.ht-card:hover .ht-card-content { transform: translateY(-8px); }
+.ht-card-sport { font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.ht-card-quote { font-size: 0.95rem; font-style: italic; color: var(--white); line-height: 1.7; margin-bottom: 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem; }
+.ht-card-name { font-family: var(--font-title); font-weight: 800; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); }
+.ht-card-detail { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-light); margin-top: 0.2rem; }
+.ht-nav { display: flex; gap: 0.75rem; padding: 2rem 3rem 0; align-items: center; }
+.ht-nav-btn { width: 48px; height: 48px; border: 1px solid var(--border-light); background: transparent; color: var(--white); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.ht-nav-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--black); }
+.ht-nav-link { margin-left: auto; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid rgba(245,196,0,0.3); padding-bottom: 2px; align-self: center; transition: border-color 0.2s; }
+.ht-nav-link:hover { border-color: var(--accent); }
+
+/* ── CASI STUDIO DETAIL ── */
+.testi-photo-feedback { display: grid; grid-template-columns: 280px 1fr; gap: 0; min-height: 340px; }
+.testi-photo-side { position: relative; overflow: hidden; }
+.testi-photo-side img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(20%); transition: filter 0.3s; }
+.testi-photo-side:hover img { filter: grayscale(0%); }
+.testi-feedback-side { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; background: var(--black); }
+.testi-client-name { font-family: var(--font-title); font-weight: 900; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.25rem; }
+.testi-client-detail { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; }
+.testi-feedback-quote { font-size: 1rem; font-style: italic; color: var(--white-dim); line-height: 1.75; border-left: 3px solid var(--accent); padding-left: 1.25rem; }
+.testi-nicolas-section { background: var(--black-soft); border-top: 1px solid var(--border); padding: 2rem 2.5rem; }
+.testi-nicolas-label { font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.testi-nicolas-label::before { content: ''; width: 20px; height: 1.5px; background: var(--accent); }
+.testi-nicolas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.testi-nicolas-text { font-size: 0.9rem; color: var(--muted-light); line-height: 1.8; }
+.testi-work-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.testi-work-list li { font-size: 0.85rem; color: var(--muted-light); display: flex; align-items: center; gap: 0.75rem; }
+.testi-work-list li::before { content: ''; width: 14px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
+
+/* ── FOOTER UPDATED ── */
+.footer { padding: 3rem; border-top: 1px solid var(--border); background: var(--black-soft); }
+.footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.footer-logo { display: flex; align-items: center; gap: 0.75rem; }
+.footer-logo img { height: 36px; width: auto; }
+.footer-logo span { font-family: var(--font-title); font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); }
+.footer-nav .footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-light); transition: color 0.2s; font-weight: 400; }
+.footer-links a:hover { color: var(--white); }
+.footer-social { display: flex; align-items: center; gap: 0.75rem; }
+.social-icon { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border: 1px solid var(--border-light); color: var(--muted-light); transition: color 0.2s, border-color 0.2s, background 0.2s; }
+.social-icon:hover { color: var(--accent); border-color: var(--accent); background: rgba(245,196,0,0.05); }
+.social-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; }
+.footer-bottom { display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-bottom p { font-size: 0.78rem; color: var(--muted-light); }
+.footer-seo-text { font-size: 0.7rem !important; color: var(--muted) !important; }
+
+/* ── RESPONSIVE ADDITIONS ── */
+@media (max-width: 960px) {
+  .section-header-row { flex-direction: column; gap: 1rem; align-items: flex-start; }
+  .seo-grid, .reviews-grid { grid-template-columns: 1fr; }
+  .home-testimonials-header { flex-direction: column; gap: 1rem; padding: 0 1.5rem 2rem; }
+  .ht-track { padding: 0 1.5rem; }
+  .ht-card { min-width: 300px; }
+  .ht-nav { padding: 1.5rem 1.5rem 0; }
+  .testi-photo-feedback { grid-template-columns: 1fr; }
+  .testi-photo-side { height: 240px; }
+  .testi-nicolas-grid { grid-template-columns: 1fr; }
+  .footer-top { flex-direction: column; text-align: center; }
+  .footer-nav .footer-links { flex-wrap: wrap; justify-content: center; }
+  .seo-block, .reviews-section { padding: 5rem 1.5rem; }
+}
+
+
+/* ── FIX FOTO 1: SEO card numbers don't glow, text bigger beside titles ── */
+.seo-card-icon {
+  font-family: var(--font-accent);
+  font-size: 3rem;
+  color: rgba(245,196,0,0.08);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: none !important;
+  pointer-events: none;
+}
+/* Remove number highlight on hover */
+.seo-card:hover .seo-card-icon { color: rgba(245,196,0,0.08) !important; }
+
+/* Section header row — text bigger and better positioned */
+.section-header-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.section-header-text {
+  font-size: 1rem;
+  color: var(--muted-light);
+  line-height: 1.8;
+  max-width: 100%;
+  padding-top: 1rem;
+}
+
+/* SEO card text bigger */
+.seo-card-title {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0.85rem;
+}
+.seo-card-body {
+  font-size: 0.95rem;
+  color: var(--muted-light);
+  line-height: 1.8;
+}
+.seo-text-block p {
+  font-size: 1rem;
+  color: var(--muted-light);
+  line-height: 1.9;
+}
+
+/* ── FIX FOTO 2: Social icons in footer ── */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--border-light);
+  color: var(--white);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.social-icon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(245,196,0,0.06);
+}
+.social-icon svg { flex-shrink: 0; }
+.social-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: inherit;
+}
+.footer-bottom p { font-size: 0.82rem; color: var(--white-dim); }
+.footer-seo-text { font-size: 0.75rem !important; color: var(--muted-light) !important; }
+
+/* ── FIX FOTO 3: Chi sono — bigger text ── */
+.chie-quote {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--white);
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+.chie-body {
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.cred-label {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.cred-val {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* ── FIX FOTO 4: Servizi — title text positioning ── */
+.section-title {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--white);
+}
+/* Services intro bigger */
+.services-intro {
+  max-width: 600px;
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  line-height: 1.85;
+  margin-bottom: 4rem;
+  margin-top: -1rem;
+}
+.service-cat-title {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* ── FIX FOTO 5: Service cards — bigger text + CTA ── */
+.service-price {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.service-price-note {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-bottom: 1.25rem;
+}
+.service-name {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.85rem;
+  line-height: 1.15;
+}
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.service-includes li {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.15rem 0;
+}
+/* INIZIA ORA — bigger CTA */
+.service-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 2px solid rgba(245,196,0,0.4);
+  padding-bottom: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.service-cta-link:hover { border-color: var(--accent); color: var(--white); }
+
+/* ── FIX FOTO 6: Casi studio — bigger text, better spacing ── */
+.testi-row-name {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: block;
+  color: var(--white);
+}
+.testi-row-sport {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-top: 0.3rem;
+  display: block;
+}
+.testi-row-result-num {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+  display: block;
+}
+.testi-row-result-lbl {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-top: 0.25rem;
+  display: block;
+}
+.testi-row-header {
+  display: grid;
+  grid-template-columns: 60px 1fr auto 80px;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2.25rem 2.5rem;
+  cursor: pointer;
+}
+.testi-row-num {
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: var(--muted-light);
+}
+
+/* Review cards bigger text */
+.review-text {
+  font-size: 0.98rem;
+  color: var(--white-dim);
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+}
+.review-author-name {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  display: block;
+}
+.review-author-detail {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Hero sub bigger */
+.hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--white-dim);
+  max-width: 440px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+.stat-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Responsive fixes */
+@media (max-width: 960px) {
+  .section-header-row { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+
+/* 1+2: SEO cards — bigger side text, numbers glow on hover */
+.seo-card-icon {
+  font-size: 3.5rem;
+  color: rgba(245,196,0,0.07);
+  transition: color 0.3s ease !important;
+}
+.seo-card:hover .seo-card-icon {
+  color: var(--accent) !important;
+}
+.seo-card-title { font-size: 1.65rem; }
+.seo-card-body  { font-size: 1rem; line-height: 1.85; }
+.seo-text-block p { font-size: 1.1rem; line-height: 2; }
+.section-header-text { font-size: 1.1rem; line-height: 1.9; }
+
+/* 4: Chi sono — side text bigger */
+.chie-content .section-header-text,
+.chie-intro-text { font-size: 1.15rem; color: var(--white-dim); line-height: 1.9; }
+
+/* 5: "30 minuti gratuiti" CTA subtext bigger */
+.cta-section-sub {
+  font-size: 1.15rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.85 !important;
+  max-width: 640px !important;
+  margin: 0 auto 2.5rem !important;
+}
+
+/* 6: Services side text bigger */
+.services-intro { font-size: 1.1rem; color: var(--white-dim); line-height: 1.9; }
+
+/* 7: Footer social — icons only, no text labels */
+.social-label { display: none !important; }
+.social-icon {
+  padding: 0.75rem !important;
+  width: 48px;
+  height: 48px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid var(--border-light);
+}
+.social-icon svg { width: 24px; height: 24px; }
+
+/* 8: Casi studio — side text bigger */
+.casi-header-text { font-size: 1.1rem; color: var(--white-dim); line-height: 1.9; }
+
+/* 9: CTA section center text bigger */
+.cta-center-text {
+  font-size: 1.15rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.9 !important;
+}
+
+/* General p inside centered cta sections */
+section[style*="text-align:center"] p,
+section[style*="text-align: center"] p {
+  font-size: 1.1rem;
+  color: var(--white-dim);
+  line-height: 1.9;
+}
+
+
+.social-label { display: none !important; }
+.social-icon { padding: 0.75rem !important; width: 48px !important; height: 48px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+.social-icon svg { width: 24px !important; height: 24px !important; }
+.section-header-text { font-size: 1.15rem !important; line-height: 1.95 !important; color: var(--white-dim) !important; }
+section[style*="text-align:center"] p, section[style*="text-align: center"] p { font-size: 1.15rem !important; color: var(--white-dim) !important; line-height: 1.9 !important; }
+
+
+/* PRENOTA — testo descrittivo accanto al titolo molto più grande */
+.prenota-side-text,
+.booking-intro { 
+  font-size: 1.35rem !important; 
+  color: var(--white-dim) !important; 
+  line-height: 1.9 !important;
+  max-width: 480px;
+}
+
+/* Tutti i testi accanto ai titoli — più grandi su tutte le pagine */
+.section-header-text { 
+  font-size: 1.35rem !important; 
+  color: var(--white-dim) !important; 
+  line-height: 1.95 !important;
+}
+
+/* Step titles e desc più grandi nella pagina prenota */
+.step-title { 
+  font-size: 1.15rem !important; 
+  letter-spacing: 0.06em !important;
+}
+.step-desc { 
+  font-size: 1rem !important; 
+  color: var(--white-dim) !important; 
+  line-height: 1.8 !important;
+}
+
+/* Labels form più visibili */
+.form-group label {
+  font-size: 0.9rem !important;
+  color: var(--white-dim) !important;
+  letter-spacing: 0.18em !important;
+}
+
+/* Testimonianze home — testo accanto titolo */
+.home-testimonials-header-text {
+  font-size: 1.2rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.9 !important;
+  max-width: 480px;
+}
+
+/* SEO + reviews section header text */
+.seo-block .section-header-text,
+.reviews-section .section-header-text {
+  font-size: 1.3rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.95 !important;
+}
+
+/* Casi studio side text */
+.casi-studio-section .section-header-text {
+  font-size: 1.3rem !important;
+}
+
+/* Servizi side text */
+.services-intro {
+  font-size: 1.25rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.95 !important;
+}
+
+
+/* 1 — Sessioni in presenza aggiuntive: testo più grande */
+.service-premium-desc {
+  font-size: 1.15rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.9 !important;
+}
+.service-premium-title {
+  font-size: 2.4rem !important;
+}
+.service-premium-label {
+  font-size: 1rem !important;
+  letter-spacing: 0.2em !important;
+}
+
+/* 2 — Testimonianze home: testo accanto al titolo molto più grande */
+.home-testimonials-header-text {
+  font-size: 1.35rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.95 !important;
+  max-width: 560px !important;
+}
+
+</style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Menu principale">
+  <a href="index.html" class="nav-logo" aria-label="NP Performance Coach - Home">
+    <img src="data:image/png;base64,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" alt="NP Performance Coach logo" width="44" height="44">
+    <span class="nav-logo-text">NP Performance</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="chi-e.html">Chi sono</a></li>
+    <li><a href="servizi.html" class="active">Servizi</a></li>
+    <li><a href="casi-studio.html">Risultati</a></li>
+    <li><a href="prenota.html" class="nav-cta">Prenota consulenza</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<main style="padding-top:72px">
+<section class="section">
+  <div class="section-header-row">
+    <div>
+      <div class="section-tag anim anim-d1">Preparazione atletica calcio</div>
+      <h1 class="section-title anim anim-d2">PROGRAMMI DI<br><span class="accent">ALLENAMENTO</span></h1>
+    </div>
+    <p class="section-header-text anim anim-d2">Ogni programma di allenamento calcio è costruito su di te: il tuo ruolo, il tuo livello, i tuoi obiettivi. Niente schede generiche — solo preparazione atletica personalizzata per calciatori seri.</p>
+  </div>
+  <div class="services-categories anim anim-d3">
+    <div class="service-category open" id="cat-schede">
+      <div class="service-category-header" onclick="toggleCat('cat-schede')">
+        <h2 class="service-cat-title">Schede mensili</h2><span class="service-cat-icon" aria-hidden="true">+</span>
+      </div>
+      <div class="service-cards">
+        <div class="service-card"><div class="service-price">€39,99</div><div class="service-price-note">/ 1 mese · solo online</div><h3 class="service-name">Scheda allenamento calcio</h3><p class="service-desc">Programma mensile personalizzato senza coaching continuativo. Per calciatori già strutturati che vogliono un piano di preparazione atletica serio.</p><ul class="service-includes"><li>Scheda personalizzata 1 mese</li><li>Questionario valutazione iniziale</li><li>Progressioni settimana per settimana</li><li>Spiegazione di ogni esercizio</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+        <div class="service-card"><div class="service-price">€59,99</div><div class="service-price-note">/ 1 mese · + coaching online</div><h3 class="service-name">Scheda + coaching calcio online</h3><p class="service-desc">Scheda mensile con supporto attivo. Il preparatore atletico ti segue durante tutto il mese e aggiusta il programma in base ai tuoi progressi.</p><ul class="service-includes"><li>Scheda personalizzata 1 mese</li><li>Check-in settimanale</li><li>Aggiustamenti in tempo reale</li><li>Supporto diretto via messaggio</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+        <div class="service-card"><div class="service-price">€99,99</div><div class="service-price-note">/ 1 mese · + 1 sessione dal vivo</div><h3 class="service-name">Scheda + sessione in presenza</h3><p class="service-desc">Scheda mensile, coaching online e un allenamento personalizzato calcio in presenza per valutarti direttamente sul campo. Disponibile in Lombardia.</p><ul class="service-includes"><li>Scheda personalizzata 1 mese</li><li>1 sessione in presenza (Lombardia)</li><li>Coaching online tutto il mese</li><li>Valutazione movimento dal vivo</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+      </div>
+    </div>
+    <div class="service-category" id="cat-3mesi">
+      <div class="service-category-header" onclick="toggleCat('cat-3mesi')">
+        <h2 class="service-cat-title">Percorsi 3 mesi</h2><span class="service-cat-icon" aria-hidden="true">+</span>
+      </div>
+      <div class="service-cards">
+        <div class="service-card"><div class="service-price">€179,99</div><div class="service-price-note">/ 3 mesi · solo online</div><h3 class="service-name">3 mesi preparazione atletica online</h3><p class="service-desc">Tre mesi di coaching calcio online continuativo. Il tempo necessario per vedere miglioramenti reali e misurabili nella tua preparazione fisica per il calcio.</p><ul class="service-includes"><li>3 schede mensili progressive</li><li>Check-in settimanale</li><li>Aggiustamenti continui</li><li>Supporto via messaggio per 3 mesi</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+        <div class="service-card"><div class="service-price">€249,99</div><div class="service-price-note">/ 3 mesi · 3 sessioni dal vivo</div><h3 class="service-name">3 mesi + 3 sessioni in presenza</h3><p class="service-desc">Il percorso trimestrale completo: coaching calcio online ogni settimana più un allenamento personalizzato in presenza ogni mese. Per chi vuole il massimo.</p><ul class="service-includes"><li>3 schede mensili progressive</li><li>1 sessione in presenza al mese</li><li>Coaching online continuativo</li><li>Valutazione progressi a fine ciclo</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+      </div>
+    </div>
+    <div class="service-category" id="cat-6mesi">
+      <div class="service-category-header" onclick="toggleCat('cat-6mesi')">
+        <h2 class="service-cat-title">Percorsi 6 mesi</h2><span class="service-cat-icon" aria-hidden="true">+</span>
+      </div>
+      <div class="service-cards">
+        <div class="service-card"><div class="service-price">€319,99</div><div class="service-price-note">/ 6 mesi · solo online</div><h3 class="service-name">6 mesi coaching calcio online</h3><p class="service-desc">Sei mesi di preparazione atletica personalizzata per calciatori. Per chi vuole una trasformazione duratura e non un risultato temporaneo.</p><ul class="service-includes"><li>6 schede mensili progressive</li><li>Check-in settimanali</li><li>Aggiustamenti in tempo reale</li><li>Supporto prioritario via messaggio</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+        <div class="service-card"><div class="service-price">€449,99</div><div class="service-price-note">/ 6 mesi · 6 sessioni dal vivo</div><h3 class="service-name">6 mesi + 6 sessioni in presenza</h3><p class="service-desc">Il percorso semestrale premium: coaching calcio online ogni settimana più allenamento personalizzato in presenza ogni mese. Massima progressione.</p><ul class="service-includes"><li>6 schede mensili progressive</li><li>1 sessione in presenza al mese</li><li>Coaching online continuativo</li><li>Review trimestrale approfondita</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+      </div>
+    </div>
+    <div class="service-category" id="cat-anno">
+      <div class="service-category-header" onclick="toggleCat('cat-anno')">
+        <h2 class="service-cat-title">Percorsi 12 mesi</h2><span class="service-cat-icon" aria-hidden="true">+</span>
+      </div>
+      <div class="service-cards">
+        <div class="service-card"><div class="service-price">€599,99</div><div class="service-price-note">/ 1 anno · solo online</div><h3 class="service-name">Un anno coaching calcio online</h3><p class="service-desc">Un anno di preparazione atletica per calciatori. Il percorso più completo per chi prende sul serio la propria performance a lungo termine.</p><ul class="service-includes"><li>12 schede mensili progressive</li><li>Check-in settimanali tutto l'anno</li><li>Review ogni 3 mesi con obiettivi</li><li>Priorità assoluta nella comunicazione</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+        <div class="service-card"><div class="service-price">€799,99</div><div class="service-price-note">/ 1 anno · 12 sessioni dal vivo</div><h3 class="service-name">Un anno + 12 sessioni in presenza</h3><p class="service-desc">Il programma allenamento calcio più completo. Un anno online ogni settimana, in presenza ogni mese con il tuo preparatore atletico personale.</p><ul class="service-includes"><li>12 schede mensili progressive</li><li>1 sessione in presenza al mese</li><li>Coaching online continuativo</li><li>Review trimestrali approfondite</li><li>Priorità assoluta su tutto</li></ul><a href="prenota.html" class="service-cta-link">Inizia ora →</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="service-premium anim">
+    <div>
+      <div class="service-premium-label">Su misura</div>
+      <div class="service-premium-title">Sessioni in presenza aggiuntive</div>
+      <p class="service-premium-desc">Vuoi aggiungere sessioni di allenamento calcio in presenza al tuo piano esistente? Il costo varia in base alla zona e alla frequenza. Disponibile in Lombardia — contattami direttamente.</p>
+    </div>
+    <a href="prenota.html" class="btn-primary" style="white-space:nowrap">Richiedi info &rarr;</a>
+  </div>
+</section>
+</main>
+<footer class="footer" role="contentinfo">
+  <div class="footer-logo">
+    <img src="data:image/png;base64,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" alt="NP Performance Coach" width="40" height="40">
+    <span>NP Performance</span>
+  </div>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <ul class="footer-links">
+      <li><a href="chi-e.html">Chi sono</a></li>
+      <li><a href="servizi.html">Servizi</a></li>
+      <li><a href="casi-studio.html">Risultati</a></li>
+      <li><a href="prenota.html">Prenota</a></li>
+    </ul>
+  </nav>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/np.performance.coach" target="_blank" rel="noopener noreferrer" aria-label="Seguici su Instagram" class="social-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="social-label">Instagram</span>
+    </a>
+    <a href="https://www.tiktok.com/@np.performance.coach" target="_blank" rel="noopener noreferrer" aria-label="Seguici su TikTok" class="social-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.13 6.29 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+      </svg>
+      <span class="social-label">TikTok</span>
+    </a>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 NP Performance Coach — Preparatore atletico per calciatori</p>
+    <p class="footer-seo-text">Coaching calcio online e in presenza | Preparazione atletica calciatori | Allenamento personalizzato calcio</p>
+  </div>
+</footer>
+<script>
+function toggleNav() {
+  const nav = document.getElementById('navLinks');
+  const btn = document.querySelector('.nav-hamburger');
+  nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+}
+document.querySelectorAll('.anim').forEach(el => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 }).observe(el);
+});
+</script>
+<script>
+function toggleCat(id) { document.getElementById(id).classList.toggle('open'); }
+</script>
+</body>
+</html>
