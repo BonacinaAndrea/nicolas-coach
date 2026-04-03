@@ -978,6 +978,85 @@ section[style*="text-align: center"] p { font-size: 1.15rem !important; color: v
   .section { padding: 5rem 2rem; }
 }
 
+
+/* ═══════════════════════════════════════
+   MOBILE PATCH v2 — solo mobile, non tocca desktop
+═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── CAROSELLO TESTIMONIANZE HOME
+     1 card centrale, mezzo bordo visibile a sx e dx
+     Swipe touch funzionante, loop continuo
+  ── */
+  .home-testimonials { padding: 3rem 0; overflow: hidden; }
+  .ht-track-outer { overflow: hidden; }
+  .ht-track {
+    display: flex !important;
+    gap: 12px !important;
+    padding: 0 calc((100vw - 80vw) / 2) !important;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1) !important;
+    cursor: grab;
+    will-change: transform;
+  }
+  .ht-card {
+    min-width: 80vw !important;
+    max-width: 80vw !important;
+    height: 400px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center;
+  }
+  .ht-nav { padding: 1.25rem 1.25rem 0; }
+  .ht-nav-btn { width: 42px; height: 42px; font-size: 1rem; }
+  .ht-nav-link { font-size: 0.78rem; }
+
+  /* ── RECENSIONI — scorrimento orizzontale touch ── */
+  .reviews-section { padding: 3rem 0 !important; }
+  .reviews-section .section-header-row,
+  .reviews-section .section-tag,
+  .reviews-section .section-title,
+  .reviews-section .section-header-text { padding: 0 1.25rem; }
+  .reviews-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    padding: 1rem 1.25rem 1.5rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+  }
+  .reviews-grid::-webkit-scrollbar { display: none; }
+  .review-card {
+    min-width: 78vw !important;
+    max-width: 78vw !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start !important;
+    padding: 1.5rem !important;
+  }
+  .review-text { font-size: 0.88rem !important; line-height: 1.65 !important; }
+  .review-author-name { font-size: 0.95rem !important; }
+
+  /* ── TESTO SEO (foto 3) — proporzioni corrette ── */
+  .seo-text-block {
+    margin-top: 2rem !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+  .seo-text-block p {
+    font-size: 0.9rem !important;
+    line-height: 1.75 !important;
+    text-align: left !important;
+    color: var(--muted-light) !important;
+  }
+  /* Tutte le sezioni con testo centrato — allinea a sinistra su mobile */
+  .seo-block { text-align: left !important; }
+  .seo-block .section-tag,
+  .seo-block .section-title,
+  .seo-block .section-header-text { text-align: left !important; }
+
+}
+
 </style>
 </head>
 <body>
@@ -1222,31 +1301,73 @@ document.querySelectorAll('.anim').forEach(el => {
   const track = document.getElementById('htTrack');
   if (!track) return;
   const cards = track.querySelectorAll('.ht-card');
-  const cardW = 360 + 24;
-  let pos = 0, maxPos = 0, isDragging = false, startX = 0, startPos = 0;
+  const total = cards.length;
+  let cur = 0;
   let autoTimer;
+  let isDragging = false, startX = 0, startScrollLeft = 0;
 
-  function updateMax() {
-    maxPos = Math.max(0, cards.length * cardW - track.parentElement.offsetWidth + 48);
+  function isMobile() { return window.innerWidth <= 768; }
+
+  function getCardW() {
+    if (isMobile()) return cards[0] ? cards[0].offsetWidth + 12 : window.innerWidth * 0.8 + 12;
+    return 360 + 24;
   }
-  function moveTo(x, animated = true) {
-    pos = Math.max(0, Math.min(x, maxPos));
-    track.style.transition = animated ? 'transform 0.45s cubic-bezier(0.4,0,0.2,1)' : 'none';
-    track.style.transform = `translateX(-${pos}px)`;
+
+  function goTo(n) {
+    cur = ((n % total) + total) % total;
+    if (isMobile()) {
+      // Scroll to center the active card
+      const cardW = getCardW();
+      const offset = cur * cardW;
+      track.style.transform = `translateX(-${offset}px)`;
+    } else {
+      const pos = Math.min(cur * getCardW(), cards.length * getCardW() - track.parentElement.offsetWidth + 96);
+      track.style.transform = `translateX(-${Math.max(0,pos)}px)`;
+    }
+    resetAuto();
   }
-  window.htNext = function() { moveTo(pos + cardW); resetAuto(); };
-  window.htPrev = function() { moveTo(pos - cardW); resetAuto(); };
-  track.addEventListener('mousedown', e => { isDragging=true; startX=e.clientX; startPos=pos; });
-  document.addEventListener('mousemove', e => { if (!isDragging) return; moveTo(startPos-(e.clientX-startX), false); });
-  document.addEventListener('mouseup', () => { isDragging=false; });
+
+  window.htNext = function() { goTo(cur + 1); };
+  window.htPrev = function() { goTo(cur - 1); };
+
+  // Touch swipe
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    clearInterval(autoTimer);
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) htNext(); else htPrev();
+    }
+    isDragging = false;
+  }, { passive: true });
+
+  // Mouse drag (desktop)
+  let mouseStartX = 0, mouseStartPos = 0, mousePos = 0;
+  track.addEventListener('mousedown', e => { isDragging=true; mouseStartX=e.clientX; mouseStartPos=mousePos; track.style.transition='none'; });
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const diff = mouseStartX - e.clientX;
+    mousePos = mouseStartPos + diff;
+    track.style.transform = `translateX(-${Math.max(0, mousePos)}px)`;
+  });
+  document.addEventListener('mouseup', () => { isDragging=false; track.style.transition='transform 0.35s cubic-bezier(0.4,0,0.2,1)'; });
+
   function resetAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(() => { if (pos >= maxPos) moveTo(0); else htNext(); }, 2000);
+    autoTimer = setInterval(htNext, 2000);
   }
+
   track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
   track.parentElement.addEventListener('mouseleave', resetAuto);
-  updateMax();
-  window.addEventListener('resize', updateMax);
+  track.addEventListener('touchstart', () => clearInterval(autoTimer), { passive: true });
+  track.addEventListener('touchend', resetAuto, { passive: true });
+
+  goTo(0);
   resetAuto();
 })();
 </script>
