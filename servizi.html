@@ -846,6 +846,119 @@ section[style*="text-align:center"] p, section[style*="text-align: center"] p { 
   max-width: 560px !important;
 }
 
+
+/* ═══════════════════════════════════════
+   MOBILE — aggiunto in coda, non tocca il desktop
+═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  body { overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  .hero-bg-text { display: none; }
+
+  /* NAV */
+  .nav { padding: 0 1.25rem; height: 64px; }
+  .nav-logo img { height: 36px; }
+  .nav-logo-text { font-size: 1.1rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+    background: rgba(8,8,8,0.99);
+    padding: 2.5rem 2rem; gap: 2rem; z-index: 199; overflow-y: auto;
+  }
+  .nav-links.open a { font-size: 1.2rem; color: var(--white); }
+  .nav-links.open .nav-cta { background: var(--accent) !important; color: var(--black) !important; padding: 1rem 2rem !important; text-align: center; }
+  .nav-hamburger { display: flex; }
+
+  /* HERO */
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 64px; }
+  .hero-left { padding: 2.5rem 1.25rem 2rem; order: 2; }
+  .hero-right { order: 1; height: 55vw; min-height: 200px; }
+  .hero-right img { object-position: center 20%; }
+  .hero-headline { font-size: clamp(2.8rem, 11vw, 3.8rem) !important; line-height: 0.9; margin-bottom: 1.5rem; }
+  .hero-sub { font-size: 0.95rem; max-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .btn-primary { width: 100%; text-align: center; }
+  .btn-ghost { text-align: center; }
+  .hero-stats { grid-template-columns: 1fr 1fr; display: grid; gap: 1.5rem; flex-direction: unset; margin-top: 2rem; padding-top: 2rem; }
+  .stat-num { font-size: 1.6rem; }
+
+  /* SECTIONS */
+  .section, .seo-block, .reviews-section { padding: 3.5rem 1.25rem; }
+  .section-title { font-size: clamp(2.2rem, 9vw, 3rem) !important; margin-bottom: 2rem !important; }
+  .section-header-row { flex-direction: column !important; gap: 1rem !important; margin-bottom: 2.5rem !important; }
+  .section-header-text { font-size: 1rem !important; }
+
+  /* SEO CARDS */
+  .seo-grid { grid-template-columns: 1fr !important; }
+  .seo-card { padding: 2rem 1.5rem; }
+  .seo-text-block p { font-size: 0.95rem !important; }
+
+  /* HOME TESTIMONIALS */
+  .home-testimonials { padding: 3rem 0; }
+  .home-testimonials-header { padding: 0 1.25rem 2rem; flex-direction: column; gap: 0.75rem; }
+  .home-testimonials-header .section-title { font-size: clamp(2rem, 8vw, 2.5rem) !important; }
+  .home-testimonials-header-text { font-size: 0.95rem !important; max-width: 100% !important; }
+  .ht-track { padding: 0 1.25rem; gap: 16px; }
+  .ht-card { min-width: calc(100vw - 2.5rem) !important; height: 420px; }
+  .ht-nav { padding: 1.5rem 1.25rem 0; }
+
+  /* REVIEWS */
+  .reviews-grid { grid-template-columns: 1fr !important; }
+
+  /* CHI SONO */
+  .chie-grid { grid-template-columns: 1fr !important; gap: 2rem; }
+  .chie-photo-wrap { max-width: 100%; }
+  .chie-photo-box { aspect-ratio: 4/5; }
+  .chie-quote { font-size: 1rem; }
+  .chie-body { font-size: 0.95rem; }
+  .credentials-grid { grid-template-columns: 1fr 1fr !important; }
+  .action-gallery { grid-template-columns: 1fr 1fr !important; margin-top: 2rem; }
+  .action-gallery img { aspect-ratio: 4/3; }
+
+  /* SERVICES */
+  .services-intro { font-size: 0.95rem !important; margin-bottom: 2rem; }
+  .service-category-header { padding: 1.5rem 1.25rem; }
+  .service-cards { grid-template-columns: 1fr !important; }
+  .service-card { padding: 1.75rem 1.25rem; }
+  .service-premium { grid-template-columns: 1fr !important; padding: 2rem 1.25rem; gap: 1.5rem; }
+  .service-premium-title { font-size: 1.6rem !important; }
+  .service-premium .btn-primary { width: 100%; text-align: center; }
+
+  /* CASI STUDIO */
+  .testi-row-header { grid-template-columns: 1fr auto !important; gap: 0.75rem !important; padding: 1.5rem 1.25rem !important; }
+  .testi-row-num { display: none !important; }
+  .testi-row-name { font-size: 1.3rem !important; }
+  .testi-row.open .testi-detail { display: block !important; }
+  .testi-photo-feedback { grid-template-columns: 1fr !important; }
+  .testi-photo-side { height: 220px; }
+  .testi-feedback-side { padding: 1.5rem 1.25rem; }
+  .testi-nicolas-grid { grid-template-columns: 1fr !important; }
+
+  /* PRENOTA */
+  .booking-grid { grid-template-columns: 1fr !important; gap: 2.5rem; }
+  .booking-intro { font-size: 1rem !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .form-group input, .form-group select, .form-group textarea { font-size: 1rem; }
+
+  /* FOOTER */
+  .footer { padding: 2.5rem 1.25rem; }
+  .footer-top { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
+  .footer-nav .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
+  .footer-social { justify-content: center; }
+  .footer-bottom { text-align: center; }
+
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .seo-grid { grid-template-columns: 1fr !important; }
+  .reviews-grid { grid-template-columns: 1fr 1fr !important; }
+  .chie-grid { grid-template-columns: 300px 1fr !important; gap: 3rem; }
+  .section { padding: 5rem 2rem; }
+}
+
 </style>
 </head>
 <body>
