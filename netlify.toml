@@ -1,7 +1,19 @@
 [build]
   publish = "."
-
+ 
 [[redirects]]
   from = "/admin"
   to = "/admin/index.html"
   status = 200
+ 
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  conditions = {Role = ["admin"]}
+ 
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+ 
