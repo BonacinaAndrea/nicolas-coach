@@ -1,0 +1,94 @@
+---
+layout: base.njk
+title: Prenota consulenza gratuita — Preparatore atletico calcio
+description: 30 minuti gratuiti per analizzare la tua situazione e capire quale programma di allenamento calcio personalizzato fa per te. Nessun impegno.
+---
+
+<section class="section" aria-label="Prenota consulenza">
+  <div class="section-header-row">
+    <div>
+      <div class="section-tag anim anim-d1">Coaching calcio online</div>
+      <h1 class="section-title anim anim-d2">PRENOTA<br><span class="accent">CONSULENZA</span></h1>
+    </div>
+    <p class="section-header-text anim anim-d2">30 minuti gratuiti per analizzare la tua situazione e capire quale programma di allenamento calcio personalizzato fa per te. Nessun impegno.</p>
+  </div>
+
+  <div class="booking-grid">
+    <div class="anim anim-d3">
+      <p class="booking-intro">La prima consulenza è gratuita. Voglio capire dove sei adesso e dove vuoi arrivare — poi ti dico con onestà se posso aiutarti con la tua preparazione atletica e come.</p>
+      <div class="booking-steps">
+        <div class="booking-step">
+          <span class="step-num">01</span>
+          <div>
+            <div class="step-title">Compila il form</div>
+            <p class="step-desc">Dimmi sport, ruolo, livello e obiettivo. Più sei specifico, più la call sarà concreta e utile.</p>
+          </div>
+        </div>
+        <div class="booking-step">
+          <span class="step-num">02</span>
+          <div>
+            <div class="step-title">Ti rispondo entro 24h</div>
+            <p class="step-desc">Ti contatto io personalmente. Nessun bot, nessun template. Zero spam.</p>
+          </div>
+        </div>
+        <div class="booking-step">
+          <span class="step-num">03</span>
+          <div>
+            <div class="step-title">30 minuti chiari</div>
+            <p class="step-desc">Analizzo la tua situazione e ti propongo il programma di allenamento calcio più adatto. Nessun giro di parole.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="anim anim-d4">
+      <form action="https://formspree.io/f/mbdpebgr" method="POST" name="consulenza" class="booking-form">
+        <p style="display:none"><label>Non compilare: <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="cognome">Cognome *</label>
+            <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" required autocomplete="family-name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="email@esempio.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Telefono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+39 333 000 0000" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="servizio">Servizio di interesse *</label>
+          <select id="servizio" name="servizio" required>
+            <option value="" disabled selected>Seleziona il programma</option>
+            <option>Scheda allenamento calcio — solo online (€39,99/mese)</option>
+            <option>Scheda + coaching calcio online (€59,99/mese)</option>
+            <option>Scheda + 1 sessione in presenza Lombardia (€99,99/mese)</option>
+            <option>3 mesi preparazione atletica online (€179,99)</option>
+            <option>3 mesi + 3 sessioni in presenza (€249,99)</option>
+            <option>6 mesi coaching calcio online (€319,99)</option>
+            <option>6 mesi + 6 sessioni in presenza (€449,99)</option>
+            <option>1 anno coaching calcio online (€599,99)</option>
+            <option>1 anno + 12 sessioni in presenza (€799,99)</option>
+            <option>Non so ancora — voglio capire cosa fa per me</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sport">Sport, ruolo e livello *</label>
+          <input type="text" id="sport" name="sport" placeholder="Es: calcio, terzino sinistro, dilettante Serie D" required>
+        </div>
+        <div class="form-group">
+          <label for="obiettivo">Il tuo obiettivo *</label>
+          <textarea id="obiettivo" name="obiettivo" placeholder="Cosa vuoi migliorare? (es: velocità, resistenza, forza esplosiva, recupero dopo infortuni)" required></textarea>
+        </div>
+        <button class="form-submit" type="submit">Invia richiesta — consulenza gratuita</button>
+        <p class="form-note">Rispondo entro 24 ore. Dati trattati con riservatezza, mai ceduti a terzi.</p>
+      </form>
+    </div>
+  </div>
+</section>

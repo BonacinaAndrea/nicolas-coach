@@ -5,36 +5,94 @@ backend:
   base_url: https://npperformance.it
   auth_endpoint: /api/auth
 
-media_folder: "images"
-public_folder: "/images"
+media_folder: "src/assets/img/uploads"
+public_folder: "/assets/img/uploads"
 
 collections:
-  - name: "impostazioni"
-    label: "Impostazioni sito"
-    files:
-      - name: "generale"
-        label: "Testi e foto principali"
-        file: "_data/generale.json"
-        fields:
-          - {label: "Titolo hero", name: "hero_titolo", widget: "string"}
-          - {label: "Sottotitolo hero", name: "hero_sub", widget: "string"}
-          - {label: "Foto hero", name: "hero_foto", widget: "image"}
-          - {label: "Foto Nicolas (Chi sono)", name: "chie_foto", widget: "image"}
-          - {label: "Testo Chi sono", name: "chie_testo", widget: "text"}
-          - {label: "Servizio 1 - Titolo", name: "servizio1_titolo", widget: "string"}
-          - {label: "Servizio 1 - Testo", name: "servizio1_testo", widget: "text"}
-          - {label: "Servizio 2 - Titolo", name: "servizio2_titolo", widget: "string"}
-          - {label: "Servizio 2 - Testo", name: "servizio2_testo", widget: "text"}
-          - {label: "Servizio 3 - Titolo", name: "servizio3_titolo", widget: "string"}
-          - {label: "Servizio 3 - Testo", name: "servizio3_testo", widget: "text"}
 
   - name: "testimonianze"
     label: "Testimonianze"
-    folder: "_testimonianze"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Nome calciatore", name: "nome", widget: "string"}
-      - {label: "Categoria e età", name: "categoria", widget: "string"}
-      - {label: "Testo testimonianza", name: "testo", widget: "text"}
-      - {label: "Foto calciatore", name: "foto", widget: "image", required: false}
+    files:
+      - label: "Lista testimonianze"
+        name: "testimonianze"
+        file: "_data/testimonianze.json"
+        fields:
+          - label: "Testimonianze"
+            name: "root"
+            widget: "list"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Sport e categoria", name: "sport", widget: "string" }
+              - { label: "Dettaglio (età · categoria · periodo)", name: "detail", widget: "string" }
+              - { label: "Citazione", name: "quote", widget: "text" }
+              - { label: "Foto (opzionale)", name: "foto", widget: "image", required: false }
+
+  - name: "casi_studio"
+    label: "Casi studio"
+    files:
+      - label: "Lista casi studio"
+        name: "casi_studio"
+        file: "_data/casi_studio.json"
+        fields:
+          - label: "Casi studio"
+            name: "root"
+            widget: "list"
+            fields:
+              - { label: "Numero (01, 02...)", name: "num", widget: "string" }
+              - { label: "Nome cliente", name: "nome", widget: "string" }
+              - { label: "Sport e categoria", name: "sport", widget: "string" }
+              - { label: "Dettaglio (categoria · età)", name: "detail", widget: "string" }
+              - { label: "Citazione cliente", name: "quote", widget: "text" }
+              - { label: "Testo di Nicolas", name: "nicolas_testo", widget: "text" }
+              - label: "Cosa abbiamo lavorato"
+                name: "lavoro"
+                widget: "list"
+                field: { label: "Voce", name: "item", widget: "string" }
+              - { label: "Foto (opzionale)", name: "foto", widget: "image", required: false }
+
+  - name: "servizi"
+    label: "Servizi e prezzi"
+    files:
+      - label: "Lista servizi"
+        name: "servizi"
+        file: "_data/servizi.json"
+        fields:
+          - label: "Categorie"
+            name: "root"
+            widget: "list"
+            fields:
+              - { label: "Nome categoria", name: "categoria", widget: "string" }
+              - label: "Servizi"
+                name: "servizi"
+                widget: "list"
+                fields:
+                  - { label: "Nome servizio", name: "nome", widget: "string" }
+                  - { label: "Prezzo (es: €39,99)", name: "prezzo", widget: "string" }
+                  - { label: "Descrizione", name: "descrizione", widget: "text" }
+                  - label: "Cosa include"
+                    name: "include"
+                    widget: "list"
+                    field: { label: "Voce", name: "item", widget: "string" }
+
+  - name: "testi_sito"
+    label: "Testi principali"
+    files:
+      - label: "Testi e impostazioni"
+        name: "site"
+        file: "_data/site.json"
+        fields:
+          - { label: "Hero — eyebrow (riga piccola sopra)", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero — titolo riga 1", name: "hero_headline_1", widget: "string" }
+          - { label: "Hero — titolo riga 2", name: "hero_headline_2", widget: "string" }
+          - { label: "Hero — titolo riga 3 (accent)", name: "hero_headline_accent", widget: "string" }
+          - { label: "Hero — sottotitolo", name: "hero_sub", widget: "text" }
+          - { label: "Hero — CTA primario", name: "hero_cta_primary", widget: "string" }
+          - { label: "Hero — CTA secondario", name: "hero_cta_ghost", widget: "string" }
+          - { label: "Stat 1 — numero", name: "stat_1_num", widget: "string" }
+          - { label: "Stat 1 — etichetta", name: "stat_1_label", widget: "string" }
+          - { label: "Stat 2 — numero", name: "stat_2_num", widget: "string" }
+          - { label: "Stat 2 — etichetta", name: "stat_2_label", widget: "string" }
+          - { label: "Stat 3 — numero", name: "stat_3_num", widget: "string" }
+          - { label: "Stat 3 — etichetta", name: "stat_3_label", widget: "string" }
+          - { label: "Chi sono — testo intro", name: "chisono_testo", widget: "text" }
+          - { label: "Consulenza — testo", name: "consulenza_testo", widget: "text" }

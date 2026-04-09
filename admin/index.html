@@ -3,36 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin — NP Performance</title>
+  <title>CMS — NP Performance Coach</title>
 </head>
 <body>
-  <div id="nc-root"></div>
-  <script src="https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js"></script>
-  <script>
-    window.addEventListener('load', function() {
-      const hash = window.location.hash;
-      if (hash && hash.includes('invite_token=')) {
-        const token = hash.split('invite_token=')[1].split('&')[0];
-        const email = prompt('Inserisci la tua email:');
-        const password = prompt('Scegli una password (minimo 8 caratteri):');
-        if (email && password) {
-          fetch('https://npperformance.it/.netlify/identity/verify', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ token: token, password: password, email: email, type: 'signup' })
-          })
-          .then(r => r.json())
-          .then(data => {
-            if (data.access_token) {
-              alert('Account creato! Ora fai login con email e password.');
-              window.location.href = '/admin/';
-            } else {
-              alert('Errore: ' + JSON.stringify(data));
-            }
-          });
-        }
-      }
-    });
-  </script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
