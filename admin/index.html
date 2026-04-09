@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin — NP Performance</title>
+  <script>
+    if (window.location.hash && window.location.hash.includes('invite_token')) {
+      window.location.href = '/admin/#' + window.location.hash.slice(1);
+    }
+  </script>
 </head>
 <body>
   <div id="nc-root"></div>
