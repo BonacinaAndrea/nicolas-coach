@@ -1,20 +1,40 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: BonacinaAndrea/nicolas-coach
   branch: main
+  base_url: https://npperformance.it
+  auth_endpoint: /api/auth
+
 media_folder: "images"
 public_folder: "/images"
+
 collections:
-  - name: "casi_studio"
-    label: "Casi studio"
-    folder: "_casi"
+  - name: "impostazioni"
+    label: "Impostazioni sito"
+    files:
+      - name: "generale"
+        label: "Testi e foto principali"
+        file: "_data/generale.json"
+        fields:
+          - {label: "Titolo hero", name: "hero_titolo", widget: "string"}
+          - {label: "Sottotitolo hero", name: "hero_sub", widget: "string"}
+          - {label: "Foto hero", name: "hero_foto", widget: "image"}
+          - {label: "Foto Nicolas (Chi sono)", name: "chie_foto", widget: "image"}
+          - {label: "Testo Chi sono", name: "chie_testo", widget: "text"}
+          - {label: "Servizio 1 - Titolo", name: "servizio1_titolo", widget: "string"}
+          - {label: "Servizio 1 - Testo", name: "servizio1_testo", widget: "text"}
+          - {label: "Servizio 2 - Titolo", name: "servizio2_titolo", widget: "string"}
+          - {label: "Servizio 2 - Testo", name: "servizio2_testo", widget: "text"}
+          - {label: "Servizio 3 - Titolo", name: "servizio3_titolo", widget: "string"}
+          - {label: "Servizio 3 - Testo", name: "servizio3_testo", widget: "text"}
+
+  - name: "testimonianze"
+    label: "Testimonianze"
+    folder: "_testimonianze"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Nome cliente", name: "nome", widget: "string"}
-      - {label: "Sport e livello", name: "sport", widget: "string"}
-      - {label: "Risultato principale", name: "risultato_num", widget: "string"}
-      - {label: "Etichetta risultato", name: "risultato_label", widget: "string"}
-      - {label: "Feedback cliente", name: "quote", widget: "text"}
-      - {label: "Commento Nicolas", name: "nicolas", widget: "text"}
-      - {label: "Cosa è stato svolto (lista, una per riga)", name: "lavoro", widget: "list"}
-      - {label: "Foto cliente", name: "foto", widget: "image", required: false}
+      - {label: "Nome calciatore", name: "nome", widget: "string"}
+      - {label: "Categoria e età", name: "categoria", widget: "string"}
+      - {label: "Testo testimonianza", name: "testo", widget: "text"}
+      - {label: "Foto calciatore", name: "foto", widget: "image", required: false}
