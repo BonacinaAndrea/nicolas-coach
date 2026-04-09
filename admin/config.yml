@@ -42,27 +42,22 @@ collections:
 
   - name: "servizi"
     label: "Servizi e prezzi"
-    files:
-      - label: "Lista servizi"
-        name: "servizi"
-        file: "_data/servizi.json"
-        fields:
-          - label: "Categorie"
-            name: "root"
-            widget: "list"
-            fields:
-              - { label: "Nome categoria", name: "categoria", widget: "string" }
-              - label: "Servizi"
-                name: "servizi"
-                widget: "list"
-                fields:
-                  - { label: "Nome", name: "nome", widget: "string" }
-                  - { label: "Prezzo", name: "prezzo", widget: "string" }
-                  - { label: "Descrizione", name: "descrizione", widget: "text" }
-                  - label: "Cosa include"
-                    name: "include"
-                    widget: "list"
-                    field: { label: "Voce", name: "item", widget: "string" }
+    folder: "_servizi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options: ["Schede mensili", "Percorsi 3 mesi", "Percorsi 6 mesi", "Percorsi 12 mesi"]
+      - { label: "Nome servizio", name: "nome", widget: "string" }
+      - { label: "Prezzo (es: €39,99)", name: "prezzo", widget: "string" }
+      - { label: "Descrizione", name: "descrizione", widget: "text" }
+      - label: "Cosa include"
+        name: "include"
+        widget: "list"
+        field: { label: "Voce", name: "item", widget: "string" }
+      - { label: "Ordine (01, 02...)", name: "ordine", widget: "string" }
 
   - name: "testi_sito"
     label: "Testi principali"
