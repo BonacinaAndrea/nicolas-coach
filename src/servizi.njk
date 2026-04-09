@@ -14,30 +14,41 @@ description: Schede mensili, percorsi 3/6/12 mesi. Coaching calcio online e in p
   </div>
 
   <div class="services-categories">
-    {% for categoria in servizi %}
+
+    {% set categorie = [] %}
+    {% for s in collections.servizi %}
+      {% if s.data.categoria not in categorie %}
+        {% set categorie = (categorie.push(s.data.categoria), categorie) %}
+      {% endif %}
+    {% endfor %}
+
+    {% for cat in ["Schede mensili", "Percorsi 3 mesi", "Percorsi 6 mesi", "Percorsi 12 mesi"] %}
     <div class="service-category">
       <div class="service-category-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="service-cat-title">{{ categoria.categoria }}</span>
+        <span class="service-cat-title">{{ cat }}</span>
         <span class="service-cat-icon">+</span>
       </div>
       <div class="service-cards">
-        {% for s in categoria.servizi %}
-        <div class="service-card">
-          <div class="service-price">{{ s.prezzo }}</div>
-          <div class="service-price-note">al mese</div>
-          <div class="service-name">{{ s.nome }}</div>
-          <p class="service-desc">{{ s.descrizione }}</p>
-          <ul class="service-includes">
-            {% for item in s.include %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-          <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
-        </div>
+        {% for s in collections.servizi %}
+          {% if s.data.categoria == cat %}
+          <div class="service-card">
+            <div class="service-price">{{ s.data.prezzo }}</div>
+            <div class="service-price-note">al mese</div>
+            <div class="service-name">{{ s.data.nome }}</div>
+            <p class="service-desc">{{ s.data.descrizione }}</p>
+            <ul class="service-includes">
+              {% for item in s.data.include %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
+          </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
     {% endfor %}
+
   </div>
 
   <div class="service-premium">
