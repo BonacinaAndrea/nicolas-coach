@@ -1,0 +1,101 @@
+---
+layout: base.njk
+title: Preparatore atletico calcio — Allenamento personalizzato online e in presenza
+description: Calciatore professionista in Serie C, laureato in preparazione atletica. Programmi di allenamento per calciatori online e in presenza — con metodo scientifico e risultati misurabili.
+---
+
+<section class="hero" aria-label="Preparatore atletico per calciatori">
+  <div class="hero-left">
+    <div class="hero-eyebrow anim anim-d1">{{ site.hero_eyebrow }}</div>
+    <h1 class="hero-headline anim anim-d2">
+      {{ site.hero_headline_1 }}<br>
+      {{ site.hero_headline_2 }}<br>
+      <span class="line-accent">{{ site.hero_headline_accent }}</span>
+    </h1>
+    <p class="hero-sub anim anim-d3">{{ site.hero_sub }}</p>
+    <div class="hero-actions anim anim-d4">
+      <a href="/prenota/" class="btn-primary">{{ site.hero_cta_primary }}</a>
+      <a href="/chi-e/" class="btn-ghost">{{ site.hero_cta_ghost }} &rarr;</a>
+    </div>
+    <div class="hero-stats anim anim-d4">
+      <div><span class="stat-num">{{ site.stat_1_num }}</span><span class="stat-label">{{ site.stat_1_label }}</span></div>
+      <div><span class="stat-num">{{ site.stat_2_num }}</span><span class="stat-label">{{ site.stat_2_label }}</span></div>
+      <div><span class="stat-num">{{ site.stat_3_num }}</span><span class="stat-label">{{ site.stat_3_label }}</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="/assets/img/hero.jpg" alt="Nicolas Previtali preparatore atletico" loading="eager">
+  </div>
+</section>
+
+<section class="seo-block section" aria-label="Servizi di preparazione atletica">
+  <div class="section-header-row">
+    <div>
+      <div class="section-tag anim">Preparazione atletica per calciatori</div>
+      <h2 class="section-title anim">ALLENAMENTO<br><span class="accent">PERSONALIZZATO</span></h2>
+    </div>
+    <p class="section-header-text anim">Programmi di preparazione atletica studiati su misura per calciatori dilettanti e agonisti che vogliono migliorare velocità, forza e resistenza con metodi professionistici.</p>
+  </div>
+  <div class="seo-grid anim">
+    <article class="seo-card">
+      <div aria-hidden="true" class="seo-card-icon">01</div>
+      <h3 class="seo-card-title">Coaching calcio online</h3>
+      <p class="seo-card-body">Seguo calciatori in tutta Italia da remoto. Schede di allenamento calcio personalizzate, check-in settimanali e supporto diretto. Migliora la tua preparazione atletica senza spostarti, con un metodo da professionista di Serie C.</p>
+    </article>
+    <article class="seo-card">
+      <div aria-hidden="true" class="seo-card-icon">02</div>
+      <h3 class="seo-card-title">Schede allenamento calcio</h3>
+      <p class="seo-card-body">Niente programmi generici copiati da internet. Ogni programma di allenamento per calciatori è costruito sul tuo sport, il tuo ruolo, il tuo livello e il tuo calendario gare. Periodizzato nel tempo, con progressioni reali.</p>
+    </article>
+    <article class="seo-card">
+      <div aria-hidden="true" class="seo-card-icon">03</div>
+      <h3 class="seo-card-title">Personal trainer calcio — presenza</h3>
+      <p class="seo-card-body">Se sei in zona Lombardia posso seguirti direttamente sul campo. Valutazione del movimento, allenamento personalizzato calcio dal vivo e correzione tecnica da un preparatore atletico che gioca in Serie C.</p>
+    </article>
+  </div>
+  <div class="seo-text-block anim">
+    <p>NP Performance Coach offre programmi di preparazione fisica per calciatori dilettanti e agonisti in tutta Italia. Specializzato in allenamento calcio personalizzato, velocità, forza esplosiva e resistenza specifica per il calcio. Coaching online e in presenza — scopri quale percorso fa per te.</p>
+    <div style="text-align:center;margin-top:3rem">
+      <a class="btn-primary" href="/servizi/" style="font-size:1rem;padding:1.1rem 3rem">Inizia il tuo percorso →</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-testimonials" aria-label="Testimonianze clienti">
+  <div class="home-testimonials-header">
+    <div class="section-tag anim">Testimonianze</div>
+    <h2 class="section-title anim">COSA DICONO<br><span class="accent">I MIEI CLIENTI</span></h2>
+    <p class="home-testimonials-header-text anim">Atleti che hanno scelto un metodo serio per migliorare le loro prestazioni calcistiche.</p>
+  </div>
+  <div class="ht-track-outer">
+    <div class="ht-track" id="htTrack">
+      {% for t in collections.testimonianze %}
+      <div class="ht-card">
+        {% if t.data.foto %}
+        <div class="ht-card-img" style="background-image:url('{{ t.data.foto }}')"></div>
+        {% else %}
+        <div class="ht-card-img ht-card-img--empty"></div>
+        {% endif %}
+        <div class="ht-card-content">
+          <div class="ht-card-sport">{{ t.data.sport }}</div>
+          <blockquote class="ht-card-quote">{{ t.data.quote }}</blockquote>
+          <div class="ht-card-name">{{ t.data.nome }}</div>
+          <div class="ht-card-detail">{{ t.data.detail }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:3rem">
+    <a href="/casi-studio/" class="btn-ghost">Vedi tutti i risultati &rarr;</a>
+  </div>
+</section>
+
+<section class="section" style="text-align:center">
+  <div class="anim" style="max-width:580px;margin:0 auto">
+    <div class="section-tag" style="justify-content:center">Inizia adesso</div>
+    <h2 class="section-title" style="font-size:clamp(2.5rem,4vw,4rem);margin-bottom:1.5rem">PRENOTA LA TUA<br><span class="accent">CONSULENZA</span></h2>
+    <p style="font-size:.95rem;color:var(--muted-light);line-height:1.8;margin-bottom:2.5rem">La prima consulenza è gratuita. 30 minuti per capire dove sei, dove vuoi arrivare e quale programma di allenamento calcio fa per te.</p>
+    <a class="btn-primary" href="/prenota/">Consulenza gratuita — 30 minuti</a>
+  </div>
+</section>
