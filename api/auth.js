@@ -1,14 +1,20 @@
 export default async function handler(req, res) {
   const { code } = req.query;
-  
+
   if (!code) {
-    const redirectUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.OAUTH_CLIENT_ID}&scope=repo`;
-    return res.redirect(redirectUrl);
+    const params = new URLSearchParams({
+      client_id: process.env.OAUTH_CLIENT_ID,
+      scope: 'repo,user',
+    });
+    return res.redirect(`https://github.com/login/oauth/authorize?${params}`);
   }
 
-  const response = await fetch('https://github.com/login/oauth/access_token', {
+  const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
     method: 'POST',
-    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       client_id: process.env.OAUTH_CLIENT_ID,
       client_secret: process.env.OAUTH_CLIENT_SECRET,
@@ -16,17 +22,30 @@ export default async function handler(req, res) {
     }),
   });
 
-  const data = await response.json();
-  
-  const script = `
-    <script>
-      window.opener.postMessage(
-        'authorization:github:success:${JSON.stringify({ token: data.access_token, provider: 'github' })}',
-        'https://npperformance.it'
-      );
-    </script>
-  `;
-  
+  const { access_token, error } = await tokenRes.json();
+
+  if (error || !access_token) {
+    return res.status(401).send('Auth error: ' + (error || 'no token'));
+  }
+
+  const content = {
+    token: access_token,
+    provider: 'github',
+  };
+
+  const script = `<!DOCTYPE html><html><body><script>
+    (function() {
+      function receiveMessage(e) {
+        window.opener.postMessage(
+          'authorization:github:success:${JSON.stringify(content)}',
+          e.origin
+        );
+      }
+      window.addEventListener("message", receiveMessage, false);
+      window.opener.postMessage("authorizing:github", "*");
+    })()
+  </scr` + `ipt></body></html>`;
+
   res.setHeader('Content-Type', 'text/html');
   res.send(script);
 }
