@@ -4,16 +4,16 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("api");
 
   eleventyConfig.addCollection("servizi", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("../_servizi/*.md")
+    return collectionApi.getFilteredByGlob("_servizi/*.md")
       .sort((a, b) => (a.data.ordine || "").localeCompare(b.data.ordine || ""));
   });
 
   eleventyConfig.addCollection("testimonianze", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("../_testimonianze/*.md");
+    return collectionApi.getFilteredByGlob("_testimonianze/*.md");
   });
 
   eleventyConfig.addCollection("casi_studio", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("../_casi_studio/*.md");
+    return collectionApi.getFilteredByGlob("_casi_studio/*.md");
   });
 
   return {
