@@ -2,6 +2,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("api");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
 
   // Aggiungi le cartelle dati alla watch list
   eleventyConfig.addWatchTarget("src/_servizi/");
