@@ -3,17 +3,22 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("api");
 
+  // Aggiungi le cartelle dati alla watch list
+  eleventyConfig.addWatchTarget("src/_servizi/");
+  eleventyConfig.addWatchTarget("src/_testimonianze/");
+  eleventyConfig.addWatchTarget("src/_casi_studio/");
+
   eleventyConfig.addCollection("servizi", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_servizi/*.md")
+    return collectionApi.getFilteredByGlob("./src/_servizi/*.md")
       .sort((a, b) => (a.data.ordine || "").localeCompare(b.data.ordine || ""));
   });
 
   eleventyConfig.addCollection("testimonianze", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_testimonianze/*.md");
+    return collectionApi.getFilteredByGlob("./src/_testimonianze/*.md");
   });
 
   eleventyConfig.addCollection("casi_studio", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/_casi_studio/*.md");
+    return collectionApi.getFilteredByGlob("./src/_casi_studio/*.md");
   });
 
   return {
@@ -24,7 +29,7 @@ module.exports = function(eleventyConfig) {
       layouts: "_includes",
       data: "../_data"
     },
-    templateFormats: ["njk", "html"],
+    templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk"
   };
 };
