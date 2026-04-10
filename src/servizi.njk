@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Servizi — Programmi di allenamento calcio personalizzati
-description: Schede mensili, percorsi 3/6/12 mesi. Coaching calcio online e in presenza. Preparazione atletica personalizzata per calciatori seri.
+description: Schede mensili, percorsi 3/6/12 mesi. Coaching calcio online e in presenza.
 ---
 
 <section class="section" aria-label="Servizi di preparazione atletica">
@@ -14,107 +14,30 @@ description: Schede mensili, percorsi 3/6/12 mesi. Coaching calcio online e in p
   </div>
 
   <div class="services-categories">
-
+    {% for categoria in servizi %}
     <div class="service-category">
       <div class="service-category-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="service-cat-title">Schede mensili</span>
+        <span class="service-cat-title">{{ categoria.categoria }}</span>
         <span class="service-cat-icon">+</span>
       </div>
       <div class="service-cards">
-        {% for s in collections.servizi %}
-          {% if s.data.categoria == "Schede mensili" %}
-          <div class="service-card">
-            <div class="service-price">{{ s.data.prezzo }}</div>
-            <div class="service-price-note">al mese</div>
-            <div class="service-name">{{ s.data.nome }}</div>
-            <p class="service-desc">{{ s.data.descrizione }}</p>
-            <ul class="service-includes">
-              {% for item in s.data.include %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-            <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
-          </div>
-          {% endif %}
+        {% for s in categoria.servizi %}
+        <div class="service-card">
+          <div class="service-price">{{ s.prezzo }}</div>
+          <div class="service-price-note">al mese</div>
+          <div class="service-name">{{ s.nome }}</div>
+          <p class="service-desc">{{ s.descrizione }}</p>
+          <ul class="service-includes">
+            {% for item in s.include %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
+        </div>
         {% endfor %}
       </div>
     </div>
-
-    <div class="service-category">
-      <div class="service-category-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="service-cat-title">Percorsi 3 mesi</span>
-        <span class="service-cat-icon">+</span>
-      </div>
-      <div class="service-cards">
-        {% for s in collections.servizi %}
-          {% if s.data.categoria == "Percorsi 3 mesi" %}
-          <div class="service-card">
-            <div class="service-price">{{ s.data.prezzo }}</div>
-            <div class="service-price-note">al mese</div>
-            <div class="service-name">{{ s.data.nome }}</div>
-            <p class="service-desc">{{ s.data.descrizione }}</p>
-            <ul class="service-includes">
-              {% for item in s.data.include %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-            <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="service-category">
-      <div class="service-category-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="service-cat-title">Percorsi 6 mesi</span>
-        <span class="service-cat-icon">+</span>
-      </div>
-      <div class="service-cards">
-        {% for s in collections.servizi %}
-          {% if s.data.categoria == "Percorsi 6 mesi" %}
-          <div class="service-card">
-            <div class="service-price">{{ s.data.prezzo }}</div>
-            <div class="service-price-note">al mese</div>
-            <div class="service-name">{{ s.data.nome }}</div>
-            <p class="service-desc">{{ s.data.descrizione }}</p>
-            <ul class="service-includes">
-              {% for item in s.data.include %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-            <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="service-category">
-      <div class="service-category-header" onclick="this.parentElement.classList.toggle('open')">
-        <span class="service-cat-title">Percorsi 12 mesi</span>
-        <span class="service-cat-icon">+</span>
-      </div>
-      <div class="service-cards">
-        {% for s in collections.servizi %}
-          {% if s.data.categoria == "Percorsi 12 mesi" %}
-          <div class="service-card">
-            <div class="service-price">{{ s.data.prezzo }}</div>
-            <div class="service-price-note">al mese</div>
-            <div class="service-name">{{ s.data.nome }}</div>
-            <p class="service-desc">{{ s.data.descrizione }}</p>
-            <ul class="service-includes">
-              {% for item in s.data.include %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-            <a href="/prenota/" class="service-cta-link">Prenota consulenza →</a>
-          </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-
+    {% endfor %}
   </div>
 
   <div class="service-premium">
