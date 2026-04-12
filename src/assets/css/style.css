@@ -1043,3 +1043,156 @@ section[style*="text-align: center"] p { font-size: 1.15rem !important; color: v
 
 }
 
+/* ══════════════════════════════════════
+   HOME TESTIMONIANZE — 2 card affiancate fisse
+══════════════════════════════════════ */
+.home-testimonials-static {
+  padding: 6rem 3rem;
+  background: var(--black-soft);
+}
+.hts-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+.hts-intro {
+  font-size: 1.2rem;
+  color: var(--white-dim);
+  line-height: 1.85;
+  max-width: 480px;
+  padding-top: 1rem;
+}
+.hts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: var(--border);
+}
+.hts-card {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+.hts-card-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.25;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.hts-card:hover .hts-card-img {
+  opacity: 0.75;
+  transform: scale(1.03);
+}
+.hts-card-img--empty {
+  background: var(--black-mid);
+}
+.hts-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.5) 55%, rgba(8,8,8,0.1) 100%);
+}
+.hts-card-content {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.hts-card-sport {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+.hts-card-quote {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+}
+.hts-card-name {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+.hts-card-detail {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-top: 0.3rem;
+}
+.hts-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ══════════════════════════════════════
+   CASI STUDIO — testo più grande e leggibile
+══════════════════════════════════════ */
+.testi-client-name {
+  font-family: var(--font-title);
+  font-weight: 900;
+  font-size: 1.8rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+.testi-client-detail {
+  font-size: 0.9rem !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-bottom: 1.75rem;
+}
+.testi-feedback-quote {
+  font-size: 1.1rem !important;
+  font-style: italic;
+  color: var(--white) !important;
+  line-height: 1.8 !important;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+}
+.testi-nicolas-text {
+  font-size: 1rem !important;
+  color: var(--white-dim) !important;
+  line-height: 1.9 !important;
+}
+.testi-work-list li {
+  font-size: 0.95rem !important;
+  color: var(--white-dim) !important;
+  padding: 0.2rem 0;
+}
+.testi-nicolas-label {
+  font-family: var(--font-accent);
+  font-size: 0.95rem !important;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-testimonials-static { padding: 3.5rem 1.25rem; }
+  .hts-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .hts-grid { grid-template-columns: 1fr; }
+  .hts-card { height: 420px; }
+  .hts-intro { font-size: 1rem !important; max-width: 100%; }
+}
+
