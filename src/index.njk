@@ -61,33 +61,37 @@ description: Calciatore professionista in Serie C, laureato in preparazione atle
   </div>
 </section>
 
-<section class="home-testimonials" aria-label="Testimonianze clienti">
-  <div class="home-testimonials-header">
-    <div class="section-tag anim">Testimonianze</div>
-    <h2 class="section-title anim">COSA DICONO<br><span class="accent">I MIEI CLIENTI</span></h2>
-    <p class="home-testimonials-header-text anim">Atleti che hanno scelto un metodo serio per migliorare le loro prestazioni calcistiche.</p>
-  </div>
-  <div class="ht-track-outer">
-    <div class="ht-track" id="htTrack">
-      {% for t in testimonianze %}
-      <div class="ht-card">
-        {% if t.foto %}
-        <div class="ht-card-img" style="background-image:url('{{ t.foto }}')"></div>
-        {% else %}
-        <div class="ht-card-img ht-card-img--empty"></div>
-        {% endif %}
-        <div class="ht-card-content">
-          <div class="ht-card-sport">{{ t.sport }}</div>
-          <blockquote class="ht-card-quote">{{ t.quote }}</blockquote>
-          <div class="ht-card-name">{{ t.nome }}</div>
-          <div class="ht-card-detail">{{ t.detail }}</div>
-        </div>
-      </div>
-      {% endfor %}
+<!-- TESTIMONIANZE HOME — 2 card affiancate fisse -->
+<section class="home-testimonials-static" aria-label="Testimonianze clienti">
+  <div class="hts-header">
+    <div>
+      <div class="section-tag anim">Testimonianze</div>
+      <h2 class="section-title anim">COSA DICONO<br><span class="accent">I MIEI CLIENTI</span></h2>
     </div>
+    <p class="hts-intro anim">Atleti che hanno scelto un metodo serio per migliorare le loro prestazioni calcistiche.</p>
   </div>
-  <div style="text-align:center;margin-top:3rem">
-    <a href="/casi-studio/" class="btn-ghost">Vedi tutti i risultati &rarr;</a>
+
+  <div class="hts-grid anim">
+    {% for t in testimonianze %}
+    <div class="hts-card">
+      {% if t.foto %}
+      <div class="hts-card-img" style="background-image:url('{{ t.foto }}')"></div>
+      {% else %}
+      <div class="hts-card-img hts-card-img--empty"></div>
+      {% endif %}
+      <div class="hts-card-overlay"></div>
+      <div class="hts-card-content">
+        <div class="hts-card-sport">{{ t.sport }}</div>
+        <blockquote class="hts-card-quote">{{ t.quote }}</blockquote>
+        <div class="hts-card-name">{{ t.nome }}</div>
+        <div class="hts-card-detail">{{ t.detail }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="hts-cta">
+    <a href="/casi-studio/" class="btn-primary" style="font-size:1rem;padding:1.1rem 3rem;display:inline-block">Vedi tutti i risultati →</a>
   </div>
 </section>
 
