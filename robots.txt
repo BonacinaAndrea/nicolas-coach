@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /grazie/
+
+Sitemap: https://npperformance.it/sitemap.xml
