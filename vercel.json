@@ -1,5 +1,32 @@
 {
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "_site",
-  "framework": null
+  "framework": null,
+  "redirects": [
+    {
+      "source": "http://npperformance.it/(.*)",
+      "destination": "https://npperformance.it/$1",
+      "permanent": true
+    },
+    {
+      "source": "http://www.npperformance.it/(.*)",
+      "destination": "https://npperformance.it/$1",
+      "permanent": true
+    },
+    {
+      "source": "https://www.npperformance.it/(.*)",
+      "destination": "https://npperformance.it/$1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
 }
