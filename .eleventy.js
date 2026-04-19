@@ -4,12 +4,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("api");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
 
-  eleventyConfig.addWatchTarget("src/_servizi/");
-  eleventyConfig.addWatchTarget("src/_testimonianze/");
-  eleventyConfig.addWatchTarget("src/_casi_studio/");
+  eleventyConfig.addWatchTarget("_servizi/");
+  eleventyConfig.addWatchTarget("_testimonianze/");
+  eleventyConfig.addWatchTarget("_casi_studio/");
 
   eleventyConfig.addCollection("servizi", function(collectionApi) {
-    const items = collectionApi.getFilteredByGlob("./src/_servizi/*.md")
+    const items = collectionApi.getFilteredByGlob("./_servizi/*.md")
       .sort((a, b) => (a.data.ordine || "").localeCompare(b.data.ordine || ""));
     const grouped = {};
     items.forEach(item => {
@@ -21,12 +21,12 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("testimonianze", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/_testimonianze/*.md")
+    return collectionApi.getFilteredByGlob("./_testimonianze/*.md")
       .map(item => item.data);
   });
 
   eleventyConfig.addCollection("casi_studio", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/_casi_studio/*.md")
+    return collectionApi.getFilteredByGlob("./_casi_studio/*.md")
       .map(item => item.data);
   });
 
