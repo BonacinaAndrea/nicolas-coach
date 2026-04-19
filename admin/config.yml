@@ -4,15 +4,12 @@ backend:
   branch: main
   base_url: https://npperformance.it
   auth_endpoint: /api/auth
-
 media_folder: "src/assets/img/uploads"
 public_folder: "/assets/img/uploads"
-
 collections:
-
   - name: "testimonianze"
     label: "Testimonianze"
-    folder: "_testimonianze"
+    folder: "src/_testimonianze"
     create: true
     slug: "{{slug}}"
     fields:
@@ -21,10 +18,9 @@ collections:
       - { label: "Dettaglio (età · categoria · periodo)", name: "detail", widget: "string" }
       - { label: "Citazione", name: "quote", widget: "text" }
       - { label: "Foto (opzionale)", name: "foto", widget: "image", required: false }
-
   - name: "casi_studio"
     label: "Casi studio"
-    folder: "_casi_studio"
+    folder: "src/_casi_studio"
     create: true
     slug: "{{slug}}"
     fields:
@@ -39,10 +35,9 @@ collections:
         widget: "list"
         field: { label: "Voce", name: "item", widget: "string" }
       - { label: "Foto (opzionale)", name: "foto", widget: "image", required: false }
-
   - name: "servizi"
     label: "Servizi e prezzi"
-    folder: "_servizi"
+    folder: "src/_servizi"
     create: true
     slug: "{{slug}}"
     fields:
@@ -58,7 +53,6 @@ collections:
         widget: "list"
         field: { label: "Voce", name: "item", widget: "string" }
       - { label: "Ordine (01, 02...)", name: "ordine", widget: "string" }
-
   - name: "testi_sito"
     label: "Testi principali"
     files:
