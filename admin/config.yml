@@ -11,7 +11,7 @@ collections:
     label: "Testimonianze"
     folder: "src/_testimonianze"
     create: true
-    slug: "{{slug}}"
+    slug: "{{nome | slug}}"
     fields:
       - { label: "Nome", name: "nome", widget: "string" }
       - { label: "Sport e categoria", name: "sport", widget: "string" }
@@ -22,7 +22,7 @@ collections:
     label: "Casi studio"
     folder: "src/_casi_studio"
     create: true
-    slug: "{{slug}}"
+    slug: "{{nome | slug}}"
     fields:
       - { label: "Numero (01, 02...)", name: "num", widget: "string" }
       - { label: "Nome cliente", name: "nome", widget: "string" }
@@ -39,7 +39,7 @@ collections:
     label: "Servizi e prezzi"
     folder: "src/_servizi"
     create: true
-    slug: "{{slug}}"
+    slug: "{{nome | slug}}"
     fields:
       - label: "Categoria"
         name: "categoria"
