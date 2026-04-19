@@ -1195,4 +1195,13 @@ section[style*="text-align: center"] p { font-size: 1.15rem !important; color: v
   .hts-card { height: 420px; }
   .hts-intro { font-size: 1rem !important; max-width: 100%; }
 }
+.hts-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px !important;
+}
+.hts-grid .hts-card {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
 
