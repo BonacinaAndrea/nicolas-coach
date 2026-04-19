@@ -5,7 +5,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("sitemap.xml");
 
   eleventyConfig.addCollection("servizi", function(collectionApi) {
-    const items = collectionApi.getFilteredByGlob("./_servizi/*.md")
+    const items = collectionApi.getFilteredByGlob("./src/_servizi/*.md")
       .sort((a, b) => (a.data.ordine || "").localeCompare(b.data.ordine || ""));
     const grouped = {};
     items.forEach(item => {
@@ -17,12 +17,12 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("testimonianze", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./_testimonianze/*.md")
+    return collectionApi.getFilteredByGlob("./src/_testimonianze/*.md")
       .map(item => item.data);
   });
 
   eleventyConfig.addCollection("casi_studio", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./_casi_studio/*.md")
+    return collectionApi.getFilteredByGlob("./src/_casi_studio/*.md")
       .map(item => item.data);
   });
 
