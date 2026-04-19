@@ -1,12 +1,5 @@
 {
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "_site",
-  "framework": null,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://npperformance.it/:path*",
-      "permanent": true
-    }
-  ]
+  "framework": null
 }
