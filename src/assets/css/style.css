@@ -1204,4 +1204,10 @@ section[style*="text-align: center"] p { font-size: 1.15rem !important; color: v
   flex: 1 !important;
   min-width: 0 !important;
 }
+.hts-card-quote {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
