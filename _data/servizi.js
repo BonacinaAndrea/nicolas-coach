@@ -3,7 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 
 module.exports = function() {
-  const dir = path.join(process.cwd(), 'src/_servizi');
+  const dir = path.join(process.cwd(), '_servizi');
   if (!fs.existsSync(dir)) return [];
   const items = fs.readdirSync(dir)
     .filter(f => f.endsWith('.md'))
