@@ -3,12 +3,19 @@ const path = require('path');
 const matter = require('gray-matter');
 
 module.exports = function() {
-  const dir = path.join(process.cwd(), '_servizi');
-  if (!fs.existsSync(dir)) return [];
-  const items = fs.readdirSync(dir)
-    .filter(f => f.endsWith('.md'))
-    .map(f => matter(fs.readFileSync(path.join(dir, f), 'utf8')).data)
-    .sort((a, b) => (a.ordine || '').localeCompare(b.ordine || ''));
+  const dirs = [
+    path.join(process.cwd(), '_servizi'),
+    path.join(process.cwd(), 'src/_servizi')
+  ];
+  let items = [];
+  dirs.forEach(dir => {
+    if (fs.existsSync(dir)) {
+      fs.readdirSync(dir)
+        .filter(f => f.endsWith('.md'))
+        .forEach(f => items.push(matter(fs.readFileSync(path.join(dir, f), 'utf8')).data));
+    }
+  });
+  items.sort((a, b) => (a.ordine || '').localeCompare(b.ordine || ''));
   const grouped = {};
   items.forEach(item => {
     const cat = item.categoria;
