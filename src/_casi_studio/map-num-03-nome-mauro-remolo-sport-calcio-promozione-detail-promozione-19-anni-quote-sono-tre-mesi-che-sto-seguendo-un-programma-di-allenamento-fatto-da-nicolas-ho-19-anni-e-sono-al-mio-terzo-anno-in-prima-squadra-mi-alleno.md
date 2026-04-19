@@ -14,5 +14,9 @@ quote: Sono tre mesi che sto seguendo un programma di allenamento fatto da
 nicolas_testo: Abbiamo lavorato in modo specifo su recupero muscolare e rafforzo
   dei punti deboli che non permettevano a mauro di esprimere il meglio se
   stesso.
+lavoro:
+  - Lavoro sulla forza funzionale
+  - Prevenzione recidive
+  - Lavoro su resistenza e velocità
 foto: /assets/img/uploads/mauro.jpg
 ---
